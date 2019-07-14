@@ -7,6 +7,8 @@ footer {
   justify-content: space-around;
   align-items: center;
   min-height: 60px;
+  position: fixed;
+  bottom: 0;
   ul {
     list-style: none;
     display: flex;
