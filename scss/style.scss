@@ -1,0 +1,40 @@
+$default-margin: 25px 0;
+@import "partials/footer";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+#app {
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  color: #fff;
+}
+
+#app {
+  @media (max-width: 450px) {
+    overflow: scroll;
+    background-size: 100vw 100vh;
+  }
+  @media (min-width: 450px) and (max-width: 900px) {
+    overflow: scroll;
+  }
+  @media (min-width: 900px) and (max-width: 1200px) {
+    overflow: hidden;
+  }
+  @media (min-width: 1200px) {
+    overflow: hidden;
+  }
+}
