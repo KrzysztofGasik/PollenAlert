@@ -1,4 +1,8 @@
 $default-margin: 25px 0;
+@import "partials/header";
+@import "partials/navigation";
+@import "partials/mainwindow";
+@import "partials/home";
 @import "partials/footer";
 
 * {
@@ -21,6 +25,12 @@ body {
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
   color: #fff;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 #app {
