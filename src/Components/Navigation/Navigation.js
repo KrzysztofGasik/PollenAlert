@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const MenuElements = [
   {
-    path: "/home",
+    path: "/",
     name: "Home",
     icon: "fas fa-home"
   },

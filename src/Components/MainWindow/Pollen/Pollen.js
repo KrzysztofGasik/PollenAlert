@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 const Pollen = () => {
   return (
-    <h1>Pollen</h1>
+    <h2 className="home">Pollen</h2>
   );
 };
 

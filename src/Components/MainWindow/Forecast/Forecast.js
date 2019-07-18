@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 const Forecast = () => {
   return (
-    <h1>Forecast</h1>
+    <h2 className="home">Forecast</h2>
   );
 };
 
