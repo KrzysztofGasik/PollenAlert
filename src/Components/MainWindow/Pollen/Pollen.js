@@ -1,55 +1,7 @@
-import React, { Component,Fragment } from "react";
-
-const months = [
-  {
-    month: "Styczeń",
-    details: "Szczegoły odnośnie stycznia"
-  },
-  {
-    month: "Luty",
-    details: "Szczegoły odnośnie lutego"
-  },
-  {
-    month: "Marzec",
-    details: "Szczegoły odnośnie marca"
-  },
-  {
-    month: "Kwiecień",
-    details: "Szczegoły odnośnie kwietnia"
-  },
-  {
-    month: "Maj",
-    details: "Szczegoły odnośnie maja"
-  },
-  {
-    month: "Czerwiec",
-    details: "Szczegoły odnośnie czerwca"
-  },
-  {
-    month: "Lipiec",
-    details: "Szczegoły odnośnie lipca"
-  },
-  {
-    month: "Sierpień",
-    details: "Szczegoły odnośnie sierpnia"
-  },
-  {
-    month: "Wrzesień",
-    details: "Szczegoły odnośnie września"
-  },
-  {
-    month: "Październik",
-    details: "Szczegoły odnośnie października"
-  },
-  {
-    month: "Listopad",
-    details: "Szczegoły odnośnie listopada"
-  },
-  {
-    month: "Grudzień",
-    details: "Szczegoły odnośnie grudnia"
-  }
-];
+import React, { Component, Fragment } from "react";
+import { Months } from "./Data";
+import { Trees } from "./Data";
+import { Grasses } from "./Data";
 
 class Pollen extends Component {
   constructor(props) {
@@ -57,7 +9,11 @@ class Pollen extends Component {
     this.state = {
       enlarge: false,
       hide: false,
-      monthArr: []
+      show: false,
+      bigger: false,
+      monthArr: [],
+      pollenArr: [],
+      imageArr: []
     };
   }
 
@@ -65,11 +21,35 @@ class Pollen extends Component {
     this.setState({
       enlarge: !this.state.enlarge,
       hide: !this.state.hide,
-      monthArr: month,
+      monthArr: month
+    });
+  };
+
+  showInfo = tree => {
+    this.setState({
+      show: !this.state.show,
+      pollenArr: tree
+    });
+  };
+
+  closeInfo = () => {
+    this.setState({
+      show: !this.state.show,
+      pollenArr: [],
+      bigger: !this.state.bigger,
+      imageArr: []
+    });
+  };
+
+  enlargeImage = (img) => {
+    this.setState({
+      bigger: !this.state.bigger,
+      imageArr: img
     });
   };
 
   render() {
+    console.log(this.state.imageArr)
     return (
       <div className="pollen__wrapper">
         <h2 className="home">
@@ -77,28 +57,131 @@ class Pollen extends Component {
           Sprawdź
         </h2>
         <div className="month__wrapper">
-          {months.map(val => {
+          {Months.map(val => {
             return (
               <Fragment key={val.month}>
-              {(this.state.hide && !this.state.monthArr.includes(val.month)) ? null :
-              <div
-                className={
-                  this.state.enlarge && this.state.monthArr.includes(val.month)
-                    ? "month__square__details"
-                    : "month__square"
-                }
-                
-              >
-                <span>{val.month}</span>
-                <button onClick={() => this.showDetails(val.month)}>
-                  {this.state.enlarge ? "Zamknij" : "Sprawdź"}
-                </button>
-                {this.state.enlarge && this.state.monthArr.includes(val.month) && 
-                <>
-                {val.details}
-                </>}
-              </div>
-              }
+                {this.state.hide &&
+                !this.state.monthArr.includes(val.month) ? null : (
+                  <div
+                    className={
+                      this.state.enlarge &&
+                      this.state.monthArr.includes(val.month)
+                        ? "month__square__details"
+                        : "month__square"
+                    }
+                  >
+                    <span>{val.month}</span>
+                    <button onClick={() => this.showDetails(val.month)}>
+                      {this.state.enlarge ? "Zamknij" : "Sprawdź"}
+                    </button>
+                    {this.state.enlarge &&
+                      this.state.monthArr.includes(val.month) && (
+                        <div className="month__pollen__wrapper">
+                          {val.trees != "" &&
+                            val.trees.map((v, index) => {
+                              return (
+                                <div
+                                  className={
+                                    this.state.show &&
+                                    this.state.pollenArr.includes(v)
+                                      ? "month__square__pollendetails"
+                                      : "month__square__pollen"
+                                  }
+                                  key={v}
+                                >
+                                  {this.state.show &&
+                                  this.state.pollenArr.includes(v) ? (
+                                    <>
+                                      {Trees.filter(t => t.name == v).map(
+                                        tree => {
+                                          return (
+                                            <Fragment key={tree}>
+                                              <span className="pollen__details">
+                                                {tree.name}
+                                              </span>
+                                              <span className="pollen__details">
+                                                {tree.info}
+                                              </span>
+                                              <img src={tree.image} onClick={()=>this.enlargeImage(tree.name)} className={(this.state.bigger && this.state.imageArr.includes(tree.name)) ? "bigger" : ""}/>
+                                              <button
+                                                onClick={() =>
+                                                  this.closeInfo(v)
+                                                }
+                                              >
+                                                Zamknij
+                                              </button>
+                                            </Fragment>
+                                          );
+                                        }
+                                      )}
+                                    </>
+                                  ) : (
+                                    <>
+                                      <span>{v}</span>
+                                      <i
+                                        className="fas fa-tree"
+                                        onClick={() => this.showInfo(v)}
+                                      />
+                                    </>
+                                  )}
+                                </div>
+                              );
+                            })}
+
+                          {val.grass != "" &&
+                            val.grass.map((v, index) => {
+                              return (
+                                <div
+                                  className={
+                                    this.state.show &&
+                                    this.state.pollenArr.includes(v)
+                                      ? "month__square__pollendetails"
+                                      : "month__square__pollen"
+                                  }
+                                  key={v}
+                                >
+                                  {this.state.show &&
+                                  this.state.pollenArr.includes(v) ? (
+                                    <>
+                                      {Grasses.filter(g => g.name == v).map(
+                                        grass => {
+                                          return (
+                                            <Fragment key={grass}>
+                                              <span className="pollen__details">
+                                                {grass.name}
+                                              </span>
+                                              <span className="pollen__details">
+                                                {grass.info}
+                                              </span>
+                                              <img src={grass.image} onClick={()=>this.enlargeImage(grass.name)} className={(this.state.bigger && this.state.imageArr.includes(grass.name)) ? "bigger" : ""}/>
+                                              <button
+                                                onClick={() =>
+                                                  this.closeInfo(v)
+                                                }
+                                              >
+                                                Zamknij
+                                              </button>
+                                            </Fragment>
+                                          );
+                                        }
+                                      )}
+                                    </>
+                                  ) : (
+                                    <>
+                                      <span>{v}</span>
+                                      <i
+                                        className="fas fa-seedling"
+                                        onClick={() => this.showInfo(v)}
+                                      />
+                                    </>
+                                  )}
+                                </div>
+                              );
+                            })}
+                        </div>
+                      )}
+                  </div>
+                )}
               </Fragment>
             );
           })}
