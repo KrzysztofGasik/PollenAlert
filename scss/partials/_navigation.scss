@@ -3,13 +3,22 @@ nav {
   flex-flow: column wrap;
   justify-content: space-evenly;
   order: 1;
-  flex: 1 1 10%;
+  flex: 1 1 10vw;
+  .menu__visible {
+    opacity: 1;
+    animation: visibleNav 0.5s ease-in-out;
+  }
+  .menu__hidden {
+    opacity: 0;
+    animation: hiddenNav 0.5s ease-in-out;
+  }
   ul {
     display: flex;
     flex-flow: column wrap;
+    align-items: center;
     list-style: none;
     li {
-      padding: 75px 15px;
+      padding: 55px 0;
       a:visited,
       a:link {
         text-decoration: none;
@@ -21,6 +30,41 @@ nav {
         color: rgba(0, 0, 0, 1);
       }
     }
+  }
+}
+
+.fa-window-close, .fa-bars {
+  font-size: 25px;
+  color: red;
+  margin: 0 auto;
+}
+
+.fa-window-close:hover, .fa-bars:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+@keyframes visibleNav {
+  0% {
+    opacity: 0;
+    transform: translateX(-25px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes hiddenNav {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-25px);
   }
 }
 
