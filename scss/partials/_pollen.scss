@@ -1,0 +1,57 @@
+.pollen__wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  .month__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    .month__square,
+    .month__square__details {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      padding: 25px;
+      border: 3px solid #fff;
+      border-radius: 2px;
+      color: #000;
+      margin: 5px;
+      background-image: url("../img/leaf.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      span,
+      button {
+        padding: 15px;
+        background: transparent;
+        color: #fff;
+        font-weight: bold;
+        border: 2px solid rgba(255, 255, 255, 0);
+      }
+      button:hover {
+        border: 2px solid rgba(255, 255, 255, 1);
+        border-radius: 2px;
+        background: #fff;
+        color: #000;
+        cursor: pointer;
+      }
+    }
+    .month__square__details {
+      animation: slowEnter 1.25s ease-in-out;
+      width: 80vw;
+      height: 70vh;
+    }
+  }
+}
+
+@keyframes slowEnter {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
