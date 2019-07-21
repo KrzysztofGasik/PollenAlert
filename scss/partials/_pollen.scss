@@ -37,11 +37,74 @@
       }
     }
     .month__square__details {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
       animation: slowEnter 1.25s ease-in-out;
-      width: 80vw;
-      height: 70vh;
+    }
+    .month__pollen__wrapper {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      align-items: center;
+      .month__square__pollen {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        padding: 5px;
+        border: 3px solid #fff;
+        border-radius: 2px;
+        color: #000;
+        margin: 5px;
+        flex-shrink: 3;
+        i {
+          color: #008000;
+        }
+        i:hover {
+          color: #00cd00;
+          cursor: pointer;
+        }
+      }
+      .month__square__pollendetails {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        animation: slowEnter 1.25s ease-in-out;
+        background: rgba(255, 255, 255, 0.55);
+        .pollen__details {
+            color: #000 !important;
+        }
+        button {
+          padding: 10px;
+          background: transparent;
+          color: #000;
+          font-weight: bold;
+          border: 2px solid rgba(255, 255, 255, 0);
+        }
+        button:hover {
+          border: 2px solid rgba(255, 255, 255, 1);
+          border-radius: 2px;
+          background: #fff;
+          color: #000;
+          cursor: pointer;
+        }
+        img {
+          width: 100px;
+        }
+        img:hover {
+          cursor: pointer;
+        }
+        .bigger {
+          width: 50%;
+        }
+      }
     }
   }
+}
+
+.fa-tree,
+.fa-seedling {
+  font-size: 35px;
 }
 
 @keyframes slowEnter {
