@@ -47,5 +47,11 @@ body {
   }
   @media (min-width: 1200px) {
     overflow: hidden;
+    .month__square__details {
+      max-width: 50vw;
+    }
+    .month__square__pollendetails {
+      max-width: 50vw;
+    }
   }
 }
