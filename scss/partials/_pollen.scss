@@ -66,42 +66,45 @@
       }
       .month__square__pollendetails {
         display: flex;
-        flex-flow: column wrap;
+        justify-content: space-around;
         align-items: center;
         animation: slowEnter 1.25s ease-in-out;
         background: rgba(255, 255, 255, 0.55);
         max-width: 50%;
-        .pollen__details {
-          color: #000 !important;
-          font-style: italic;
-          font-size: 0.75rem;
-          overflow: auto;
-          text-align: center;
+        .pollen__details__wrapper {
+          display: flex;
+          flex-flow: column wrap;
+          align-items: center;
+          .pollen__details {
+            color: #000 !important;
+            font-style: italic;
+            font-size: 0.75rem;
+            overflow: auto;
+            text-align: center;
+          }
+          button {
+            padding: 10px;
+            background: transparent;
+            color: #000;
+            font-weight: bold;
+            border: 2px solid rgba(255, 255, 255, 0);
+            margin: 5px 0;
+          }
+          button:hover {
+            border: 2px solid rgba(255, 255, 255, 1);
+            border-radius: 2px;
+            background: #fff;
+            color: #000;
+            cursor: pointer;
+          }
+          img {
+            width: 100px;
+          }
+          .bigger {
+            width: 200px;
+          }
         }
-        button {
-          padding: 10px;
-          background: transparent;
-          color: #000;
-          font-weight: bold;
-          border: 2px solid rgba(255, 255, 255, 0);
-          margin: 5px 0;
-        }
-        button:hover {
-          border: 2px solid rgba(255, 255, 255, 1);
-          border-radius: 2px;
-          background: #fff;
-          color: #000;
-          cursor: pointer;
-        }
-        img {
-          width: 100px;
-        }
-        img:hover {
-          cursor: pointer;
-        }
-        .bigger {
-          width: 50%;
-        }
+        
       }
     }
   }

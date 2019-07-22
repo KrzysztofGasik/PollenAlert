@@ -21,7 +21,7 @@
     },
     {
       month: "Maj",
-      trees: ["Brzoza", "Dąb bezszypułkowy", "Buk zwyczajny", "Wierzba biała","Sosna","Świerk"],
+      trees: ["Brzoza", "Dąb bezszypułkowy", "Buk zwyczajny", "Wierzba biała","Sosna","Świerk pospolity"],
       grass: ["Trawa", "Babka zwyczajna", "Pokrzywa", "Szczaw"]
     },
     {
@@ -124,7 +124,7 @@
       id: 12,
       name: "Świerk pospolity",
       info: "Świerk pospolity (Picea abies (L.) H.Karst) – gatunek drzewa z rodziny sosnowatych (Pinaceae). Jest to jedyny gatunek świerka występujący naturalnie w Polsce. Rośnie głównie w północno-wschodniej części kraju, na południu Polski, w górach i na pogórzu. Nie występuje w sposób naturalny w centralnej i zachodniej Polsce (tzw. pas bezświerkowy). Zasięg tego gatunku rozciąga się na północy Europy od Norwegii do Rosji, występuje także w Alpach, Sudetach, Karpatach oraz na Bałkanach. Na wschodzie sięga Uralu, gdzie stopniowo wypiera go świerk syberyjski (Picea obovata). Północna granica występowania przebiega w Norwegii.",
-      image: "../img/Swierk.jpg"
+      image: "../img/Swierk.jpeg"
     },
     {
       id: 13,

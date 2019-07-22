@@ -95,6 +95,7 @@ class Pollen extends Component {
                                         tree => {
                                           return (
                                             <Fragment key={tree}>
+                                              <div className="pollen__details__wrapper">
                                               <span className="pollen__details">
                                                 {tree.name}
                                               </span>
@@ -102,6 +103,8 @@ class Pollen extends Component {
                                                 {tree.info}
                                                 <blockquote>Źródło: Wikipedia</blockquote>
                                               </span>
+                                              </div>
+                                              <div className="pollen__details__wrapper">
                                               <button onClick={()=>this.enlargeImage(tree.name)} >
                                                 {(this.state.bigger && this.state.imageArr.includes(tree.name)) ? "X" : "Powiększ"}
                                               </button>
@@ -113,6 +116,7 @@ class Pollen extends Component {
                                               >
                                                 Zamknij
                                               </button>
+                                              </div>
                                             </Fragment>
                                           );
                                         }
@@ -130,7 +134,6 @@ class Pollen extends Component {
                                 </div>
                               );
                             })}
-
                           {val.grass != "" &&
                             val.grass.map((v, index) => {
                               return (
@@ -150,6 +153,7 @@ class Pollen extends Component {
                                         grass => {
                                           return (
                                             <Fragment key={grass}>
+                                              <div className="pollen__details__wrapper">
                                               <span className="pollen__details">
                                                 {grass.name}
                                               </span>
@@ -157,6 +161,8 @@ class Pollen extends Component {
                                                 {grass.info}
                                                 <blockquote>Źródło: Wikipedia</blockquote>
                                               </span>
+                                              </div>
+                                              <div className="pollen__details__wrapper">
                                               <button onClick={()=>this.enlargeImage(grass.name)} >
                                                 {(this.state.bigger && this.state.imageArr.includes(grass.name)) ? "X" : "Powiększ"}
                                               </button>
@@ -168,6 +174,7 @@ class Pollen extends Component {
                                               >
                                                 Zamknij
                                               </button>
+                                              </div>
                                             </Fragment>
                                           );
                                         }
