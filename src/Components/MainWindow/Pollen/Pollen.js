@@ -36,7 +36,7 @@ class Pollen extends Component {
     this.setState({
       show: !this.state.show,
       pollenArr: [],
-      bigger: !this.state.bigger,
+      bigger: false,
       imageArr: []
     });
   };
@@ -49,7 +49,6 @@ class Pollen extends Component {
   };
 
   render() {
-    console.log(this.state.imageArr)
     return (
       <div className="pollen__wrapper">
         <h2 className="home">
@@ -101,8 +100,12 @@ class Pollen extends Component {
                                               </span>
                                               <span className="pollen__details">
                                                 {tree.info}
+                                                <blockquote>Źródło: Wikipedia</blockquote>
                                               </span>
-                                              <img src={tree.image} onClick={()=>this.enlargeImage(tree.name)} className={(this.state.bigger && this.state.imageArr.includes(tree.name)) ? "bigger" : ""}/>
+                                              <button onClick={()=>this.enlargeImage(tree.name)} >
+                                                {(this.state.bigger && this.state.imageArr.includes(tree.name)) ? "X" : "Powiększ"}
+                                              </button>
+                                              <img src={tree.image} className={(this.state.bigger && this.state.imageArr.includes(tree.name)) ? "bigger" : ""}/>
                                               <button
                                                 onClick={() =>
                                                   this.closeInfo(v)
@@ -152,8 +155,12 @@ class Pollen extends Component {
                                               </span>
                                               <span className="pollen__details">
                                                 {grass.info}
+                                                <blockquote>Źródło: Wikipedia</blockquote>
                                               </span>
-                                              <img src={grass.image} onClick={()=>this.enlargeImage(grass.name)} className={(this.state.bigger && this.state.imageArr.includes(grass.name)) ? "bigger" : ""}/>
+                                              <button onClick={()=>this.enlargeImage(grass.name)} >
+                                                {(this.state.bigger && this.state.imageArr.includes(grass.name)) ? "X" : "Powiększ"}
+                                              </button>
+                                              <img src={grass.image} className={(this.state.bigger && this.state.imageArr.includes(grass.name)) ? "bigger" : ""}/>
                                               <button
                                                 onClick={() =>
                                                   this.closeInfo(v)

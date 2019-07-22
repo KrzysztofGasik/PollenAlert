@@ -56,7 +56,6 @@
         border-radius: 2px;
         color: #000;
         margin: 5px;
-        flex-shrink: 3;
         i {
           color: #008000;
         }
@@ -71,8 +70,13 @@
         align-items: center;
         animation: slowEnter 1.25s ease-in-out;
         background: rgba(255, 255, 255, 0.55);
+        max-width: 50%;
         .pollen__details {
-            color: #000 !important;
+          color: #000 !important;
+          font-style: italic;
+          font-size: 0.75rem;
+          overflow: auto;
+          text-align: center;
         }
         button {
           padding: 10px;
@@ -80,6 +84,7 @@
           color: #000;
           font-weight: bold;
           border: 2px solid rgba(255, 255, 255, 0);
+          margin: 5px 0;
         }
         button:hover {
           border: 2px solid rgba(255, 255, 255, 1);
