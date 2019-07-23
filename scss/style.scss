@@ -62,6 +62,12 @@ body {
     .month__square {
       padding: 10px;
     }
+    .month__square__pollen {
+      img {
+        width: 65px;
+        height: 65px;
+      }
+    }
   }
   @media (min-width: 900px) and (max-width: 1200px) {
     overflow: auto;
@@ -76,6 +82,12 @@ body {
             
           }
         }
+      }
+    }
+    .month__square__pollen {
+      img {
+        width: 75px;
+        height: 75px;
       }
     }
   }
