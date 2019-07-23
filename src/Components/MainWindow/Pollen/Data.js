@@ -221,6 +221,7 @@
     }
   ]
 
+  const Iglaste = ["Sosna", "Świerk pospolity"];
   const Grass = ["Trawa","Babka zwyczajna","Pokrzywa","Szczaw","Żyto","Babka lancetowata","Komosa","Babka szerokolistna","Bylica","Ambrozja"]
   
-  export {Months, Data, Grass};
+  export {Months, Data, Iglaste, Grass};
