@@ -111,11 +111,11 @@
             cursor: pointer;
           }
           img {
-            transform: scale(0.75);
+            max-width: 200px;
             transition: all 0.75s;
           }
           .bigger {
-            transform: scale(1.0);
+            max-width: 300px;
           }
         }
       }
