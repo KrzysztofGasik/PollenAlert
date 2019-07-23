@@ -1,7 +1,11 @@
 import React, { Component, Fragment } from "react";
 import { Months } from "./Data";
 import { Data } from "./Data";
+import {Iglaste} from "./Data";
 import {Grass} from "./Data";
+import treeImg from "../../../../img/tree1.png";
+import tree2Img from "../../../../img/tree2.png";
+import grassImg from "../../../../img/grass.png";
 
 class Pollen extends Component {
   constructor(props) {
@@ -100,10 +104,10 @@ class Pollen extends Component {
                                               <button onClick={()=>this.enlargeImage(tree.name)} >
                                                 {(this.state.bigImage && this.state.imageArr.includes(tree.name)) ? "X" : "Powiększ"}
                                               </button>
-                                              <img src={tree.image} className={(this.state.bigImage && this.state.imageArr.includes(tree.name)) ? "bigger" : ""}/>
                                               <button onClick={() =>this.closeInfo(v)}>
                                                 Zamknij
                                               </button>
+                                              <img src={tree.image} className={(this.state.bigImage && this.state.imageArr.includes(tree.name)) ? "bigger" : ""}/>
                                               </div>
                                             </Fragment>
                                           );
@@ -113,8 +117,9 @@ class Pollen extends Component {
                                   ) : (
                                     <>
                                       <span>{v}</span>
-                                      <i className={Grass.includes(v) ? "fas fa-seedling" : "fas fa-tree"} onClick={() => this.showInfo(v)}/>
+                                      <img src={Grass.includes(v) ? grassImg : (Iglaste.includes(v) ? tree2Img : treeImg)} onClick={() => this.showInfo(v)}/>
                                     </>
+                                    //
                                   )}
                                 </div>)
                               }
