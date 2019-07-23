@@ -82,7 +82,6 @@
         align-items: center;
         animation: slowEnter 1.25s ease-in-out;
         background: rgba(255, 255, 255, 0.55);
-        // max-width: 25vw;
         .pollen__details__wrapper {
           display: flex;
           flex-flow: column wrap;
@@ -110,10 +109,11 @@
             cursor: pointer;
           }
           img {
-            width: 100px;
+            transform: scale(0.75);
+            transition: all 0.75s;
           }
           .bigger {
-            width: 200px;
+            transform: scale(1.0);
           }
         }
       }

@@ -25,19 +25,19 @@
     },
     {
       month: "Lipiec",
-      trees: [""]
+      trees: ["Trawa", "Pokrzywa","Komosa","Babka lancetowata","Szczaw","Babka szerokolistna", "Bylica"]
     },
     {
       month: "Sierpień",
-      trees: [""]
+      trees: ["Trawa","Bylica","Pokrzywa","Komosa","Babka lancetowata","Babka szerokolistna","Ambrozja"]
     },
     {
       month: "Wrzesień",
-      trees: [""]
+      trees: ["Trawa","Bylica","Pokrzywa","Komosa","Babka lancetowata","Babka szerokolistna","Ambrozja"]
     },
     {
       month: "Październik",
-      trees: [""]
+      trees: ["Trawa","Bylica","Pokrzywa","Komosa","Babka lancetowata","Babka szerokolistna","Ambrozja"]
     }
   ];
 
@@ -197,7 +197,30 @@
       type: "trawa",
       info: "Komosa (Chenopodium L.) – rodzaj roślin, należący w różnych systemach klasyfikacyjnych do rodziny komosowatych lub szarłatowatych (m.in. system APG III z 2009). Obejmuje ponad 100 gatunków spotykanych na całym niemal świecie, z czego w Polsce występuje ok. 30 gatunków, zarówno rodzimych, jak i zawleczonych lub uprawianych. Niektóre gatunki są jadalne.",
       image: "../img/Komosa.jpg"
+    },
+    {
+      id: 23,
+      name: "Babka szerokolistna",
+      type: "trawa",
+      info: "Babka szerokolistna występuje na terenach europejskich oraz w Azji Północnej i Środkowej. Zbieramy ją od maja do września. Zioło nazywane jest również babką pospolitą, zwyczajną, szeroką, wielką, a także podróżnikiem.",
+      image: "../img/BabkaSzerokolistna.jpg"
+    },
+    {
+      id: 24,
+      name: "Bylica",
+      type: "trawa",
+      info: "Bylica pospolita (Artemisia vulgaris L.) – gatunek rośliny z rodziny astrowatych. Rodzime obszary jego występowania to Europa, znaczna część Azji oraz Algieria i Tunezja. Jako gatunek zawleczony rozprzestrzenił się również w Ameryce Północnej i innych rejonach świata. W Polsce gatunek bardzo pospolity na całym niżu, oraz na pogórzu. Status gatunku we florze Polski: gatunek rodzimy.",
+      image: "../img/Bylica.jpg"
+    },
+    {
+      id: 25,
+      name: "Ambrozja",
+      type: "trawa",
+      info: "Ambrozja, d. bożybyt (Ambrosia L.) – rodzaj roślin należący do rodziny astrowatych. Niegdyś ambrozja bylicolistna nazywana była bożybytem.",
+      image: "../img/Ambrozja.jpg"
     }
   ]
+
+  const Grass = ["Trawa","Babka zwyczajna","Pokrzywa","Szczaw","Żyto","Babka lancetowata","Komosa","Babka szerokolistna","Bylica","Ambrozja"]
   
-  export {Months, Data};
+  export {Months, Data, Grass};
