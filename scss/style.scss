@@ -11,7 +11,8 @@ $default-margin: 25px 0;
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -35,23 +36,50 @@ body {
 }
 
 #app {
+  @media only screen and (max-width: 600px) {
+    body {
+      min-width: calc(100% - 50px);
+    }
+  }
   @media (max-width: 450px) {
-    overflow: scroll;
+    overflow: auto;
     background-size: 100vw 100vh;
+    body {
+      min-width: calc(100% - 50px);
+    }
+    .month__square {
+      padding: 0;
+    }
+    .month__square__pollen {
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
   }
   @media (min-width: 450px) and (max-width: 900px) {
-    overflow: scroll;
+    overflow: auto;
+    .month__square {
+      padding: 10px;
+    }
   }
   @media (min-width: 900px) and (max-width: 1200px) {
-    overflow: hidden;
+    overflow: auto;
+    .month__square {
+      padding: 15px;
+    }
+    .pollen__wrapper {
+      .month__wrapper {
+        .month__pollen__wrapper {
+          .month__square__pollendetails {
+            flex-flow: row wrap;
+            
+          }
+        }
+      }
+    }
   }
   @media (min-width: 1200px) {
-    overflow: hidden;
-    .month__square__details {
-      max-width: 50vw;
-    }
-    .month__square__pollendetails {
-      max-width: 50vw;
-    }
+    overflow: auto;
   }
 }
