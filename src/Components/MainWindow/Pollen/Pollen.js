@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { Months } from "./Data";
 import { Data } from "./Data";
+import {Grass} from "./Data";
 
 class Pollen extends Component {
   constructor(props) {
@@ -112,7 +113,7 @@ class Pollen extends Component {
                                   ) : (
                                     <>
                                       <span>{v}</span>
-                                      <i className="fas fa-tree" onClick={() => this.showInfo(v)}/>
+                                      <i className={Grass.includes(v) ? "fas fa-seedling" : "fas fa-tree"} onClick={() => this.showInfo(v)}/>
                                     </>
                                   )}
                                 </div>)
