@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from "react";
-import { Months } from "./Data";
-import { Data } from "./Data";
-import {Iglaste} from "./Data";
-import {Grass} from "./Data";
-import treeImg from "../../../../img/tree1.png";
-import tree2Img from "../../../../img/tree2.png";
-import grassImg from "../../../../img/grass.png";
+import { Months, Data, Coniferous, Grass, Fungus, Dust, Animal } from "./Data";
+import leafyImg from "../../../../img/Leafy.png";
+import coniferousImg from "../../../../img/Coniferous.png";
+import grassImg from "../../../../img/Grass.png";
+import fungusImg from "../../../../img/Fungus.png";
+import dustImg from "../../../../img/Dust.png";
+import animalImg from "../../../../img/Animal.png";
 
 class Pollen extends Component {
   constructor(props) {
@@ -63,7 +63,7 @@ class Pollen extends Component {
           Sprawdź
         </h2>
         <span className="author">Opracowanie: dr med. Piotr Rapiejko na podstawie pomiarów Ośrodka Badania Alergenów Środowiskowych</span>
-        <div className="month__wrapper">
+        <div className="month__wrapper home">
           {Months.map(val => {
             return (
               <Fragment key={val.month}>
@@ -117,7 +117,7 @@ class Pollen extends Component {
                                   ) : (
                                     <>
                                       <span>{v}</span>
-                                      <img src={Grass.includes(v) ? grassImg : (Iglaste.includes(v) ? tree2Img : treeImg)} onClick={() => this.showInfo(v)}/>
+                                      <img src={Grass.includes(v) ? grassImg : (Coniferous.includes(v) ? coniferousImg : (Fungus.includes(v) ? fungusImg : (Dust.includes(v) ? dustImg : (Animal.includes(v) ? animalImg : leafyImg))))} onClick={() => this.showInfo(v)}/>
                                     </>
                                     //
                                   )}

@@ -13,7 +13,7 @@
     },
     {
       month: "Kwiecień",
-      trees: ["Brzoza","Topola", "Grab pospolity", "Jesion wyniosły", "Wierzba biała", "Dąb bezszypułkowy"]
+      trees: ["Brzoza","Topola", "Grab pospolity", "Jesion wyniosły", "Wierzba biała", "Dąb bezszypułkowy","Cladosporium","Alternaria"]
     },
     {
       month: "Maj",
@@ -21,27 +21,25 @@
     },
     {
       month: "Czerwiec",
-      trees: ["Bez czarny","Lipa", "Platan","Trawa","Żyto","Szczaw", "Babka lancetowata", "Pokrzywa", "Komosa"]
+      trees: ["Bez czarny","Lipa", "Platan","Trawa","Żyto","Szczaw", "Babka lancetowata", "Pokrzywa", "Komosa","Cladosporium","Alternaria"]
     },
     {
       month: "Lipiec",
-      trees: ["Trawa", "Pokrzywa","Komosa","Babka lancetowata","Szczaw","Babka szerokolistna", "Bylica"]
+      trees: ["Trawa", "Pokrzywa","Komosa","Babka lancetowata","Szczaw","Babka szerokolistna", "Bylica","Cladosporium","Alternaria"]
     },
     {
       month: "Sierpień",
-      trees: ["Trawa","Bylica","Pokrzywa","Komosa","Babka lancetowata","Babka szerokolistna","Ambrozja"]
+      trees: ["Trawa","Bylica","Pokrzywa","Komosa","Babka lancetowata","Babka szerokolistna","Ambrozja","Cladosporium","Alternaria"]
     },
     {
       month: "Wrzesień",
-      trees: ["Trawa","Bylica","Pokrzywa","Komosa","Babka lancetowata","Babka szerokolistna","Ambrozja"]
+      trees: ["Trawa","Bylica","Pokrzywa","Komosa","Babka lancetowata","Babka szerokolistna","Ambrozja","Kurz","Cladosporium","Alternaria"]
     },
     {
       month: "Październik",
-      trees: ["Trawa","Bylica","Pokrzywa","Komosa","Babka lancetowata","Babka szerokolistna","Ambrozja"]
+      trees: ["Trawa","Bylica","Pokrzywa","Komosa","Babka lancetowata","Babka szerokolistna","Ambrozja","Kurz","Zwierzęta","Cladosporium","Alternaria"]
     }
   ];
-
-//Opracowanie: dr med. Piotr Rapiejko na podstawie pomiarów Ośrodka Badania Alergenów Środowiskowych
 
   const Data = [
     {
@@ -218,10 +216,41 @@
       type: "trawa",
       info: "Ambrozja, d. bożybyt (Ambrosia L.) – rodzaj roślin należący do rodziny astrowatych. Niegdyś ambrozja bylicolistna nazywana była bożybytem.",
       image: "../img/Ambrozja.jpg"
+    },
+    {
+      id: 26,
+      name: "Cladosporium",
+      type: "grzyb",
+      info: "Cladosporium - liczący kilkaset gatunków rodzaj grzybów z klasy Dothideomycetes. Są to grzyby mikroskopijne, szeroko rozprzestrzenione na świecie i występujące w różnych strefach klimatycznych. Większość gatunków to saprotrofy rozwijające się na obumarłych roślinach, grzybach i innych odpadach organicznych, niektóre jednak są pasożytami roślin.",
+      image: "../img/Cladosporium.jpg"
+    },
+    {
+      id: 27,
+      name: "Alternaria",
+      type: "grzyb",
+      info: "Alternaria Nees – rodzaj workowców z klasy Dothideomycetes. Należy do niego kilkaset gatunków. Grzyby mikroskopijne, saprotrofy lub pasożyty. Niektóre są endemitami, większość jest szeroko rozprzestrzeniona na całym świecie.",
+      image: "../img/Alternaria.jpg"
+    },
+    {
+      id: 28,
+      name: "Kurz",
+      type: "grzyb",
+      info: "Roztocze kurzu domowego – grupa saprofitycznych, mikroskopijnych (0,1–0,5 mm długości) pajęczaków z rzędu roztoczy (Acari), żyjących w kurzu domowym i żywiących się głównie naskórkiem. Roztocze, ich odnóża oraz odchody są alergenami powodującymi reakcje alergiczne takie jak kaszel, duszności, czy swędzenie u osób uczulonych.",
+      image: "../img/Kurz.jpg"
+    },
+    {
+      id: 29,
+      name: "Zwierzęta",
+      type: "zwierze",
+      info: "Alergia na sierść zwierząt domowych (kot i pies). Łzawienie oczu, katar, zatkany nos, kichanie, kaszel – tak objawia się najczęściej alergia na zwierzęta domowe. Zdarza się jednak, że pojawienie się zwierzaka w domu wywołuje bardzo niepokojące ataki duszności, a nawet astmę",
+      image: "../img/Animal.jpeg"
     }
   ]
 
-  const Iglaste = ["Sosna", "Świerk pospolity"];
+  const Coniferous = ["Sosna", "Świerk pospolity"];
   const Grass = ["Trawa","Babka zwyczajna","Pokrzywa","Szczaw","Żyto","Babka lancetowata","Komosa","Babka szerokolistna","Bylica","Ambrozja"]
+  const Fungus = ["Cladosporium","Alternaria"];
+  const Dust = ["Kurz"];
+  const Animal = ["Zwierzęta"];
   
-  export {Months, Data, Iglaste, Grass};
+  export {Months, Data, Coniferous, Grass, Fungus, Dust, Animal};
