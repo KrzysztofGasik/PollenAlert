@@ -8,14 +8,14 @@ const MenuElements = [
     icon: "fas fa-home"
   },
   {
+    path: "/info",
+    name: "Info",
+    icon: "fas fa-question"
+  },
+  {
     path: "/pollen",
     name: "Pollen",
     icon: "fas fa-leaf"
-  },
-  {
-    path: "/forecast",
-    name: "Forecast",
-    icon: "fas fa-smog"
   }
 ];
 
