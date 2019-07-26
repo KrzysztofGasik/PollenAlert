@@ -10,11 +10,15 @@
   padding: 25px;
   .info__wrapper__slider {
     animation: slowEnter 1.25s ease-in-out;
-
     span {
         animation: slowEnter 1.25s ease-in-out;
     }
   }
+}
+
+.info__wrapper:hover {
+  background: rgba(0, 0, 0, 1);
+  cursor: $custom;
 }
 
 .fa-arrow-left,
