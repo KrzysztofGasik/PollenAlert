@@ -1,45 +1,42 @@
-import React, { Component } from "react";
-
-const Steps = [
-  {
-    id: 1,
-    text:
-      "Alergia to dolegliwość, której znaczenie pochodzi od greckich wyrazów: allos - inny i ergon” - działanie. Alergia oznacza więc nadwrażliwość – nadmierną reakcję organizmu przy kontakcie z alergenami (np. bakteriami, wirusami, środkami chemicznymi, pokarmami, lekami, itp.); jest chorobą cywilizacyjną XXI wieku. Niemożliwe jest trwałe i całkowite wyleczenie alergii."
-  },
-  {
-    id: 2,
-    text:
-      "Alergia jest niewłaściwą reakcja układu odpornościowego człowieka na alergeny, które dosyć licznie występują w środowisku. Dolegliwość ta uważana jest za najczęściej występującą we współczesnym świecie. U zdrowych osób alergeny nie powodują żadnych objawów ani uczulenia. Układ odpornościowy odpowiedzialny jest za kontrolowanie, czy obce cząsteczki mogą negatywnie wpłynąć na zdrowie i podejmuje ewentualne działania, aby chronić organizm."
-  },
-  {
-    id: 3,
-    text:
-      "Alergiczny nieżyt nosa, znany również jako katar sienny - jest to ostry, alergiczny katar nosa, który występuje głównie wiosną lub latem; powodują go pyłki niektórych roślin oraz grzyby i ich zarodniki."
-  }
-];
+import React, { Component,Fragment } from "react";
+import Steps from "./Steps";
 
 class Info extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      step: 1
+      step: 0
     };
   }
 
   moveLeft = () => {
-    if (this.state.step > 1) {
-      this.setState({
+    this.setState(
+      {
         step: this.state.step - 1
-      });
-    }
+      },
+      () => {
+        if (this.state.step == -1) {
+          this.setState({
+            step: Steps.length-1
+          });
+        }
+      }
+    );
   };
 
   moveRight = () => {
-    if (this.state.step < 3) {
-      this.setState({
+    this.setState(
+      {
         step: this.state.step + 1
-      });
-    }
+      },
+      () => {
+        if (this.state.step == Steps.length) {
+          this.setState({
+            step: 0
+          });
+        }
+      }
+    );
   };
 
   render() {
@@ -48,8 +45,15 @@ class Info extends Component {
         <i className="fas fa-arrow-left" onClick={this.moveLeft} />
         <div className="info__wrapper">
           <div className="info__wrapper__slider">
-            {Steps.filter(s => s.id == this.state.step).map(info => {
-              return <span key={info.id}>{info.text}</span>;
+            {Steps.filter(s => s.index == this.state.step).map(info => {
+              return (
+                  <Fragment key={info.index}>
+                  <p>{info.text}</p>
+                  <p id="break">{info.break}</p>
+                  <blockquote><a href="http://www.medonet.pl/magazyny/abc-alergii,alergia---objawy--rodzaje-i-leczenie-alergii--uczulenie-na-pylki,artykul,1587489.html"
+                  target="_blank">Źródło</a></blockquote>
+                  </Fragment>
+              );    
             })}
           </div>
         </div>
