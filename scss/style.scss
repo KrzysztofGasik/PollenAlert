@@ -48,6 +48,11 @@ body {
     body {
       min-width: calc(100% - 50px);
     }
+    .info__wrapper {
+      .info__wrapper__slider {
+        font-size: 0.75em;
+      }
+    }
     .month__square {
       padding: 0;
     }
@@ -60,6 +65,11 @@ body {
   }
   @media (min-width: 450px) and (max-width: 900px) {
     overflow: auto;
+    .info__wrapper {
+      .info__wrapper__slider {
+        font-size: 0.95em;
+      }
+    }
     .month__square {
       padding: 10px;
     }
@@ -72,6 +82,11 @@ body {
   }
   @media (min-width: 900px) and (max-width: 1200px) {
     overflow: auto;
+    .info__wrapper {
+      .info__wrapper__slider {
+        font-size: 1em;
+      }
+    }
     .month__square {
       padding: 15px;
     }
@@ -94,5 +109,10 @@ body {
   }
   @media (min-width: 1200px) {
     overflow-x: hidden;
+    .info__wrapper {
+      .info__wrapper__slider {
+        font-size: 1.25em;
+      }
+    }
   }
 }
